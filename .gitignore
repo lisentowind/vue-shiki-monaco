@@ -12,6 +12,6 @@ server/dist
 public/dist
 .turbo
 storybook-static
-
+.claude
 *.tgz
 packages/core/types/**/*

@@ -101,5 +101,8 @@
     "shikijs",
     "unplugin",
     "vitesse"
+  ],
+  "i18n-ally.localesPaths": [
+    "apps/docs/i18n"
   ]
 }

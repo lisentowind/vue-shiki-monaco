@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 
 import type MonacoSource from "../../components/Monaco/index.vue";
-import FullDemo from "./examples/custom-edit.vue";
 import Monaco from "./index.vue";
 
 const meta: Meta<typeof MonacoSource> = {
@@ -11,31 +10,12 @@ const meta: Meta<typeof MonacoSource> = {
   argTypes: {
     currentLanguage: {
       control: { type: "select" },
-      options: [
-        "javascript",
-        "typescript",
-        "python",
-        "html",
-        "css",
-        "json",
-        "vue",
-        "go",
-        "rust",
-      ],
+      options: ["javascript", "typescript"],
       description: "当前编程语言",
     },
     currentTheme: {
       control: { type: "select" },
-      options: [
-        "vitesse-light",
-        "vitesse-dark",
-        "github-light",
-        "github-dark",
-        "ayu-dark",
-        "nord",
-        "one-dark-pro",
-        "dracula",
-      ],
+      options: ["vitesse-light", "vitesse-dark", "github-light", "github-dark"],
       description: "当前Monaco编辑器主题",
     },
     languages: {
@@ -94,27 +74,8 @@ export const Default: Story = {
   args: {
     currentLanguage: "javascript",
     currentTheme: "vitesse-light",
-    languages: [
-      "javascript",
-      "typescript",
-      "python",
-      "html",
-      "css",
-      "json",
-      "vue",
-      "go",
-      "rust",
-    ],
-    themes: [
-      "vitesse-light",
-      "vitesse-dark",
-      "github-light",
-      "github-dark",
-      "ayu-dark",
-      "nord",
-      "one-dark-pro",
-      "dracula",
-    ],
+    languages: ["javascript", "typescript"],
+    themes: ["vitesse-light", "vitesse-dark", "github-light", "github-dark"],
     height: "700px",
     showToolbar: true,
   },
@@ -125,17 +86,4 @@ export const Default: Story = {
       },
     },
   },
-};
-
-export const CustomFullDemo: Story = {
-  args: {},
-  render: (args) => ({
-    components: {
-      FullDemo,
-    },
-    setup() {
-      return { attrs: args };
-    },
-    template: `<FullDemo v-bind="attrs"  />`,
-  }),
 };
